@@ -10,7 +10,7 @@ jobs:
     
     steps:
       - name: Hello world Ubuntu!
-        run: echo 'Hello world'
+        run: date
         
   print_hello_world_windows:
     name: Hello world Windows!
@@ -18,9 +18,7 @@ jobs:
     
     steps:
       - name: Hello world Windows!
-        run: |
-          echo 'Hello world'
-          date
+        run: date
         
   print_hello_world_macos:
     name: Hello world MacOS!
@@ -31,4 +29,15 @@ jobs:
     
     steps:
       - name: Hello world MacOS!
-        run: echo 'Hello world MacOS!'
+        run: date
+        
+  print_hello_world_fourjob:
+       name: Hello world fourjob!
+       runs-on: macos-latest
+       needs:
+           - print_hello_world_ubuntu
+           - print_hello_world_windows
+    
+       steps:
+         - name: Hello world fourjob!
+           run: date

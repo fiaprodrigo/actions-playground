@@ -16,5 +16,5 @@ jobs:
              uses: actions/upload-artifact@v3.1.2
              with:
                  name: ${{ VARS.NOME_ARQUIVO_UPLOAD }}
-                 vpath: .
+                 path: .
                  retention-days: 15

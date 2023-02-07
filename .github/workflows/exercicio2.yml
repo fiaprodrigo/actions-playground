@@ -1,0 +1,19 @@
+name: "exercício 2"
+
+on: [push]
+
+jobs:
+     cria_e_upload_artefato:
+         name: cria artefato
+         runs-on: ubuntu-latest                
+                
+         steps:
+           - name : checkout repository
+             uses: actions/checkout@3.3.0
+      
+           - name: Upload a Build Artifact
+             uses: actions/upload-artifact@v3.1.2
+             with:
+                 name: repositorio_do_rodrigo
+                 vpath: .
+                 retention-days: 15
